@@ -46,8 +46,6 @@ while (!defined($end_time) || time <= $end_time) {
         print "[$timestamp] Connectivity check OK: $url ($ip_address)\n";
         print color('reset');
 
-        my $traceroute_output = `traceroute $url`;
-        print $fh $traceroute_output;
     } else {
         print $fh "$timestamp - WARNING: No Connectivity\n";
         print color('red');
@@ -57,5 +55,5 @@ while (!defined($end_time) || time <= $end_time) {
     print $fh "\n";
     close $fh;
 
-    sleep(300);
+    sleep(100);
 }
